@@ -6,6 +6,7 @@ return {
       "L3MON4D3/LuaSnip",
     },
     opts = function(_, opts)
+      --TODO: add some todo generator
       opts.snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
