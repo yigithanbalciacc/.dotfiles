@@ -1,4 +1,10 @@
 return {
-  { "folke/lazy.nvim", version = false },
-  { "LazyVim/LazyVim", version = false },
+  { "folke/lazy.nvim" },
+  {
+    "LazyVim/LazyVim",
+    news = {
+      lazyvim = true,
+      neovim = true,
+    },
+  },
 }

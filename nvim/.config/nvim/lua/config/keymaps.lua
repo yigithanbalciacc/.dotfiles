@@ -34,6 +34,7 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
 -- buffers
+--TODO: fix shift keymap not overriding
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer", remap = true })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
@@ -233,3 +234,4 @@ map("n", "=", ':vertical resize +5<CR>', { desc = "Vertical resize window(+)" })
 map("n", "-", '<cmd>:vertical resize -5<CR>', { desc = "Vertical resize window(-)" })
 map("n", "+", ':horizontal resize +2<CR>', { desc = "Horizontal resize window(+)" })
 map("n", "_", ':horizontal resize -2<CR>', { desc = "Horizontal resize window(-)" })
+--NOTE: Add C-Space A-Space mapping in cmp config (completion)
