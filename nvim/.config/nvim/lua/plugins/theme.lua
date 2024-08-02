@@ -19,6 +19,7 @@ return {
 
       vim.cmd([[colorscheme gruvbox-material]])
       vim.cmd([[hi Cursor guifg=bg guibg=fg]])
+      return opts
     end,
   },
 }
