@@ -18,6 +18,7 @@ return {
       vim.g.gruvbox_material_better_performance = 1
 
       vim.cmd([[colorscheme gruvbox-material]])
+      vim.cmd([[hi Cursor guifg=bg guibg=fg]])
     end,
   },
 }
