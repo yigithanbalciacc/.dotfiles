@@ -235,3 +235,4 @@ map("n", "-", '<cmd>:vertical resize -5<CR>', { desc = "Vertical resize window(-
 map("n", "+", ':horizontal resize +2<CR>', { desc = "Horizontal resize window(+)" })
 map("n", "_", ':horizontal resize -2<CR>', { desc = "Horizontal resize window(-)" })
 --NOTE: Add C-Space A-Space mapping in cmp config (completion)
+--NOTE: double tap diagnostic hover (K) to enter the opened popup
