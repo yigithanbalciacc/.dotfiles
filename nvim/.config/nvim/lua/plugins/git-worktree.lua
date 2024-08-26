@@ -1,9 +1,7 @@
 return {
   "polarmutex/git-worktree.nvim",
-  version = "^2",
   dependencies = { "nvim-lua/plenary.nvim" },
   opts = function(_, opts)
-    require("git-worktree").setup()
     require("telescope").load_extension("git_worktree")
     return opts
   end,
@@ -15,9 +13,7 @@ return {
     },
     {
       "<leader>gws",
-      function()
-        require("telescope").extensions.git_worktree.git_worktrees()
-      end,
+      "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
       desc = "Search Git Worktrees",
     },
     {
