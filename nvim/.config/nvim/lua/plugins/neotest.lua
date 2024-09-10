@@ -8,8 +8,9 @@ return {
     -- The adapter will then be automatically loaded with the config.
     adapters = {
       ["neotest-jest"] = {
-        jestCommand = "npm test --",
-        JestConfigFile = "custom.jest.config.ts",
+        jestCommand = "npm test -- --detectOpenHandles",
+        env = { CI = true },
+        JestConfigFile = "jest.config.ts",
       },
     },
     -- Example for loading neotest-golang with a custom config
