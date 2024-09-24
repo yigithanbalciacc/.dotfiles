@@ -18,6 +18,8 @@ return {
         sh = { "shfmt" },
         go = { "goimports", "gofmt" },
         typescript = { "prettier" },
+        markdown = { "prettier", "markdown-cli2", "markdown-toc" },
+        ["markdown.mdx"] = { "prettier", "markdown-cli2", "markdown-toc" },
       },
     },
   },

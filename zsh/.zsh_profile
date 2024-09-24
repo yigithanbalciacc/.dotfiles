@@ -1,7 +1,8 @@
 # c/c++ compiler settings
 export CC=clang
 export CXX=clang++
-
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+VIM="nvim"
 # env var path 
 addToPath /usr/local/go/bin
 addToPath $HOME/.local/bin
