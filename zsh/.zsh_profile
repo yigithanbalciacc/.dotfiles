@@ -2,6 +2,9 @@
 export CC=clang
 export CXX=clang++
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@15/lib/pkgconfig"
 VIM="nvim"
 # env var path 
 addToPath /usr/local/go/bin
@@ -9,6 +12,7 @@ addToPath $HOME/.local/bin
 addToPath $HOME/.local/scripts/
 addToPath ~/.cargo/bin
 addToPath $HOME/go/bin
+PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # os specific tasks
 osSpecificTasks() {
