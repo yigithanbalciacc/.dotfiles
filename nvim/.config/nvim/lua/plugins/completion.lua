@@ -6,6 +6,9 @@ return {
       "L3MON4D3/LuaSnip",
     },
     opts = function(_, opts)
+      opts.auto_brackets = opts.auto_brackets or {}
+      table.insert(opts.auto_brackets, "python")
+
       opts.snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body)

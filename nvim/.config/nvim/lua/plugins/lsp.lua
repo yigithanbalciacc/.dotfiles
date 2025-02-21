@@ -6,6 +6,30 @@ return {
       -- LSP Server Settings
       ---@type lspconfig.options
       servers = {
+        ruff = {
+          cmd_env = { RUFF_TRACE = "messages" },
+          init_options = {
+            settings = {
+              logLevel = "error",
+            },
+          },
+          keys = {
+            {
+              "<leader>co",
+              LazyVim.lsp.action["source.organizeImports"],
+              desc = "Organize Imports",
+            },
+          },
+        },
+        ruff_lsp = {
+          keys = {
+            {
+              "<leader>co",
+              LazyVim.lsp.action["source.organizeImports"],
+              desc = "Organize Imports",
+            },
+          },
+        },
         marksman = {},
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
@@ -134,6 +158,12 @@ return {
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
+        ruff = function(_, opts)
+          LazyVim.lsp.on_attach(function(client, _)
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
+          end, ruff)
+        end,
         tsserver = function()
           -- disable tsserver
           return true

@@ -21,7 +21,7 @@ return {
   --       vim.opt.termguicolors = true
   --     end
   --
-  --     vim.opt.background = "dark"
+  --     vim.opt.background = "light"
   --
   --     vim.g.gruvbox_material_background = "medium"
   --
@@ -34,5 +34,9 @@ return {
   {
     "EdenEast/nightfox.nvim",
     name = "nightfox",
+    opts = function(_, opts)
+      vim.cmd([[colorscheme nightfox]])
+      return opts
+    end,
   },
 }
