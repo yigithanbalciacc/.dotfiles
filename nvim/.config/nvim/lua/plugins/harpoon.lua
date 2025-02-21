@@ -8,6 +8,7 @@ return {
       },
     },
     keys = {
+      { "<leader>h", "", desc = "+Harpoon" },
       {
         "<leader>hm",
         function()
@@ -48,10 +49,10 @@ return {
         "<leader>H",
         false,
       },
-      {
-        "<leader>h",
-        false,
-      },
+      -- {
+      --   "<leader>h",
+      --   false,
+      -- },
       {
         "<leader>1",
         false,

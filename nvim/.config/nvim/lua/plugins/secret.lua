@@ -4,7 +4,8 @@ return {
     return opts
   end,
   keys = {
-    { "<leader>ks", ":Secret<CR>", { desc = "Enable Secret View" } },
-    { "<leader>kS", ":Secret!<CR>", { desc = "Disable Secret View" } },
+    { "<leader>uk", "", desc = "+Secret" },
+    { "<leader>uks", ":Secret<CR>", desc = "Enable Secret View" },
+    { "<leader>ukS", ":Secret!<CR>", desc = "Disable Secret View" },
   },
 }

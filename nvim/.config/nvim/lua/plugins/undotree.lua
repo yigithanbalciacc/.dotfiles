@@ -3,7 +3,12 @@ return {
     "mbbill/undotree",
     name = "undotree",
     config = function(_, opts)
-      vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle)
+      vim.keymap.set(
+        "n",
+        "<leader>U",
+        vim.cmd.UndotreeToggle,
+        { desc = "Undo Tree Toggle", noremap = true, silent = true }
+      )
 
       -- Check if persistent undo is supported
       if vim.fn.has("persistent_undo") == 1 then
