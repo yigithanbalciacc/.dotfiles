@@ -1,7 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-local map = LazyVim.safe_keymap_set
+local map = vim.keymap.set
 --NOTE: Below mappings are custom not from lazyvim ---------------------------------------------
 
 -- better tricks navigation etc
@@ -13,13 +13,13 @@ map("n", "N", "Nzzzv", { desc = "Navigate previous and center the page" })
 --map("n", "<S-h>", '<Cmd>execute "normal! H"<CR>', { desc = "Make default H movement"})
 --map("n", "<S-l>", '<Cmd>execute "normal! L"<CR>', { desc = "Make default H movement"})
 map("i", "jj", "<esc>")
-map("i", "kk", "<esc>")
 map("i", "jk", "<esc>")
+map("i", "kk", "<esc>")
 map("i", "kj", "<esc>")
 
 -- keys to move selection up and down
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection downwards" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection upwards" })
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection downwards" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection upwards" })
 
 -- NOTE: c-o and c-i are forward and backward that is so nice in other IDEs
 -- below is to yank and paste from system clipboard more convenient

@@ -14,6 +14,7 @@ return {
           init_options = {
             settings = {
               logLevel = "error",
+              configuration = "~/.config/nvim/configs/ruff.toml",
             },
           },
           keys = {

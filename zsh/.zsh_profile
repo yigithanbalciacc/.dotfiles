@@ -34,3 +34,4 @@ osSpecificTasks
 bindkey -v
 #bindkey -ar '^f' #unbinds 
 bindkey -s '^f' "tmux-sessionizer\n"
+
