@@ -1,18 +1,23 @@
 # c/c++ compiler settings
 export CC=clang
 export CXX=clang++
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@15/lib/pkgconfig"
-VIM="nvim"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk/23
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+
 # env var path 
+addToPath /usr/local/bin
 addToPath /usr/local/go/bin
 addToPath $HOME/.local/bin
 addToPath $HOME/.local/scripts/
-addToPath ~/.cargo/bin
+#needed for some vars for rust
+#. "$HOME/.cargo/env"
+addToPath $HOME/.cargo/bin
 addToPath $HOME/go/bin
-PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+addToPath $HOME/.config/emacs/bin
+addToPath /opt/homebrew/opt/llvm/bin
+addToPath /opt/homebrew/Cellar/openjdk/23/bin
 
 # os specific tasks
 osSpecificTasks() {
@@ -30,8 +35,20 @@ osSpecificTasks() {
 
 osSpecificTasks
 
+source <(fzf --zsh)
+
 # Some useful keybindings to use my custom scripts or zsh features
 bindkey -v
 #bindkey -ar '^f' #unbinds 
 bindkey -s '^f' "tmux-sessionizer\n"
 
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
+# END opam configuration
+
+alias emacs='emacsclient -c -a ""'
+alias jvim="nvim --cmd 'set runtimepath^=$HOME/.config/jvim'"
