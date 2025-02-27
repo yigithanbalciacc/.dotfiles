@@ -5,7 +5,6 @@ return {
       "rmagatti/auto-session",
     },
     opts = {
-      dim = {},
       dashboard = {
         preset = {
           header = [[
